@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOV</title>
+    <meta name="title" content="Portfolio | The Origin Value" />
+    <meta name="subject" content="Portfolio" />
+
+    <link rel="stylesheet" href="css/common/font.css" />
+    <link rel="stylesheet" href="css/common/reset.css" />
+    <link rel="stylesheet" href="css/common/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/worksub1.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
+  <body>
+    <canvas id="canvas-webgl" class="bg-noise-canvas"></canvas>
+
+    <header class="header">
+      <div class="header-inner">
+        <div id="logo-target" class="logo-area">
+          <a href="#">
+            <div id="tov-main" class="tov-wrapper">
+              <h1 class="tov-text">
+                <span class="t-the"> <span class="logo-char">T</span><span class="sub-char">he</span> </span>
+                <span class="t-origin"> <span class="font-trirong">O</span><span class="sub-char">rigin</span> </span>
+                <span class="t-value-group">
+                  <span class="t-value"> <span class="logo-char">V</span><span class="sub-char">alue</span> </span>
+                  <span class="t-line"></span>
+                </span>
+              </h1>
+            </div>
+          </a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#" id="about-btn">About</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#archive">Archive</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- // header -->
+
+    <main>
+      <section class="hero">
+        <div class="glass-container" id="bubble-container"></div>
+        <a href="#about" class="side-link sl-left" data-text="About">About</a>
+        <a href="#contact" class="side-link sl-right" data-text="Contact">Contact</a>
+      </section>
+      <!-- // hero -->
+
+      <section id="works" class="works-section">
+        <section class="project-section">
+          <div class="works-title">
+            <span class="letter-wrap"><span>W</span></span>
+            <span class="letter-wrap"><span class="font-trirong">O</span></span>
+            <span class="letter-wrap"><span>R</span></span>
+            <span class="letter-wrap"><span>K</span></span>
+            <span class="letter-wrap"><span>S</span></span>
+          </div>
+
+          <div class="track">
+            <!-- card 1 -->
+            <div class="card">
+              <a href="html/worksub1.html" class="work-link">
+                <div class="card-img">
+                  <img src="img/work1/card-1.jpg" alt="" />
+                </div>
+                <div class="card-desc">
+                  <h4>PHOTOSHOOT BEHIND FILM</h4>
+                  <p class="sub-text">화보 촬영 비하인드</p>
+                  <div class="card-meta">
+                    <p class="category">Youtube</p>
+                    <div class="card-link">
+                      <i class="fa-solid fa-square-arrow-up-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- card 2 -->
+            <div class="card">
+              <a href="html/worksub2.html" class="work-link">
+                <div class="card-img">
+                  <img src="img/work2/card-1.jpg" alt="" />
+                </div>
+                <div class="card-desc">
+                  <h4>COMMERCIAL MAKING FILM</h4>
+                  <p class="sub-text">광고 촬영 비하인드</p>
+                  <div class="card-meta">
+                    <p class="category">Youtube</p>
+                    <div class="card-link">
+                      <i class="fa-solid fa-square-arrow-up-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- card 3 -->
+            <div class="card">
+              <a href="html/worksub3.html" class="work-link">
+                <div class="card-img">
+                  <img src="img/work3/card-1.jpg" alt="" />
+                </div>
+                <div class="card-desc">
+                  <h4>VLOG CONTENT</h4>
+                  <p class="sub-text">브이로그 컨텐츠</p>
+                  <div class="card-meta">
+                    <p class="category">Youtube</p>
+                    <div class="card-link">
+                      <i class="fa-solid fa-square-arrow-up-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- card 4 -->
+            <div class="card">
+              <a href="html/worksub4.html" class="work-link">
+                <div class="card-img">
+                  <img src="img/work4/card-1.jpg" alt="" />
+                </div>
+                <div class="card-desc">
+                  <h4>DRAMA & MOVIE SKETCH</h4>
+                  <p class="sub-text">드라마 촬영 비하인드 & 영화 무대인사 현장</p>
+                  <div class="card-meta">
+                    <p class="category">Youtube</p>
+                    <div class="card-link">
+                      <i class="fa-solid fa-square-arrow-up-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- card 5 -->
+            <div class="card">
+              <a href="html/worksub5.html" class="work-link">
+                <div class="card-img">
+                  <img src="img/work5/card-1.jpg" alt="" />
+                </div>
+                <div class="card-desc">
+                  <h4>HBD CELEBRATION</h4>
+                  <p class="sub-text">생일 축전 영상</p>
+                  <div class="card-meta">
+                    <p class="category">Youtube</p>
+                    <div class="card-link">
+                      <i class="fa-solid fa-square-arrow-up-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- card 6 -->
+            <div class="card">
+              <a href="html/worksub6.html" class="work-link">
+                <div class="card-img">
+                  <img src="img/work6/card-1.jpg" alt="" />
+                </div>
+                <div class="card-desc">
+                  <h4>THUMBNAIL DESIGN</h4>
+                  <p class="sub-text">썸네일 디자인</p>
+                  <div class="card-meta">
+                    <p class="category">Thumbnail</p>
+                    <div class="card-link">
+                      <i class="fa-solid fa-square-arrow-up-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- card 7 -->
+            <div class="card">
+              <a href="html/worksub7.html" class="work-link">
+                <div class="card-img">
+                  <img src="img/work7/card-1.jpg" alt="" />
+                </div>
+                <div class="card-desc">
+                  <h4>NAVER POST</h4>
+                  <p class="sub-text">
+                    네이버 포스트 <br />
+                    <br />
+                    &nbsp;
+                  </p>
+                  <div class="card-meta">
+                    <p class="category">Naver Post</p>
+                    <div class="card-link">
+                      <i class="fa-solid fa-square-arrow-up-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- archive -->
+          <div id="archive" class="archive-inner">
+            <canvas class="archive-webgl"></canvas>
+
+            <div class="archive-ui">
+              <!-- LEFT TITLE -->
+              <div class="archive-side archive-side-left">
+                <h2>
+                  Featured <br />
+                  Projects
+                </h2>
+              </div>
+
+              <!-- RIGHT YEAR -->
+              <div class="archive-side archive-side-right">
+                <span>2026</span>
+              </div>
+
+              <!-- LEFT BOTTOM NAV -->
+              <div class="archive-nav">
+                <div class="archive-progress">
+                  <span class="archive-progress-text">0%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- LEFT -->
+            <div class="archive-column archive-left">
+              <!-- pair 1 -->
+              <div class="archive-pair">
+                <a href="html/archivesub1.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a1.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.01</span>
+
+                      <h3>
+                        Art <br />
+                        Work
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 2 -->
+              <div class="archive-pair">
+                <a href="html/archivesub2.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a2-1.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.02</span>
+
+                      <h3>
+                        Promotion <br />
+                        Page
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 3 -->
+              <div class="archive-pair">
+                <a href="html/archivesub3.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a3.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.03</span>
+
+                      <h3>
+                        Web <br />
+                        Design
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 1 -->
+              <div class="archive-pair">
+                <a href="html/archivesub1.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a1.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.01</span>
+
+                      <h3>
+                        Art <br />
+                        Work
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 2 -->
+              <div class="archive-pair">
+                <a href="html/archivesub2.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a2-1.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.02</span>
+
+                      <h3>
+                        Promotion <br />
+                        Page
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 3 -->
+              <div class="archive-pair">
+                <a href="html/archivesub3.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a3.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.03</span>
+
+                      <h3>
+                        Web <br />
+                        Design
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="archive-column archive-right">
+              <!-- pair 4 -->
+              <div class="archive-pair">
+                <a href="html/archivesub4.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a4.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.04</span>
+
+                      <h3>
+                        Poster <br />
+                        Design
+                      </h3>
+
+                      <p>Y. 2024</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 5 -->
+              <div class="archive-pair">
+                <a href="html/archivesub5.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a5.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.05</span>
+
+                      <h3>
+                        Branding <br />
+                        Design
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 6 -->
+              <div class="archive-pair">
+                <a href="html/archivesub6.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a6.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.06</span>
+
+                      <h3>
+                        Intro <br />
+                        Video
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 4 -->
+              <div class="archive-pair">
+                <a href="html/archivesub4.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a4.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.04</span>
+
+                      <h3>
+                        Poster <br />
+                        Design
+                      </h3>
+
+                      <p>Y. 2024</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 5 -->
+              <div class="archive-pair">
+                <a href="html/archivesub5.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a5.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.05</span>
+
+                      <h3>
+                        Branding <br />
+                        Design
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- pair 6 -->
+              <div class="archive-pair">
+                <a href="html/archivesub6.html" class="archive-link">
+                  <div class="archive-circle image-circle">
+                    <img src="./img/archive/a6.jpg" alt="" />
+                  </div>
+
+                  <div class="archive-circle text-circle">
+                    <div class="inner-text">
+                      <span class="circle-number">N.06</span>
+
+                      <h3>
+                        Intro <br />
+                        Video
+                      </h3>
+
+                      <p>Y. 2026</p>
+                    </div>
+
+                    <div class="orbit-ring">
+                      <span class="orbit-dot"></span>
+                      <span class="orbit-dot orbit-dot-2"></span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- // works -->
+
+      <div id="archive-detail"></div>
+      <!-- // archive Detail -->
+
+      <section id="contact" class="contact-section">
+        <!-- email -->
+        <a href="mailto:yourmail@gmail.com" class="folder-link folder-mail">
+          <svg
+            class="folder-svg"
+            width="50"
+            height="40"
+            viewBox="0 0 40 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.0015 1.7793C17.4355 2.85456 18.479 3.55859 19.6385 3.55859H37C38.6569 3.55859 40 4.90174 40 6.55859V29C40 30.6569 38.6569 32 37 32H3C1.34315 32 0 30.6569 0 29V3C0 1.34315 1.34315 0 3 0H14.3644C15.524 0 16.5674 0.704034 17.0015 1.7793Z"
+              fill="currentColor"
+            />
+          </svg>
+
+          <span>E-mail</span>
+        </a>
+
+        <!-- instagram -->
+        <a href="https://instagram.com/7zxlko" target="_blank" class="folder-link folder-insta">
+          <svg
+            class="folder-svg"
+            width="50"
+            height="40"
+            viewBox="0 0 40 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.0015 1.7793C17.4355 2.85456 18.479 3.55859 19.6385 3.55859H37C38.6569 3.55859 40 4.90174 40 6.55859V29C40 30.6569 38.6569 32 37 32H3C1.34315 32 0 30.6569 0 29V3C0 1.34315 1.34315 0 3 0H14.3644C15.524 0 16.5674 0.704034 17.0015 1.7793Z"
+              fill="currentColor"
+            />
+          </svg>
+
+          <span>Instagram</span>
+        </a>
+
+        <!-- back button -->
+        <button class="back-top">
+          <div class="back-box">
+            <span class="arrow">↑</span>
+          </div>
+
+          <span class="back-text">BACK TO TOP</span>
+        </button>
+
+        <!-- huge text -->
+        <div class="contact-bg-text">GET IN TOUCH</div>
+
+        <!-- footer -->
+        <div class="contact-footer">
+          <a href="mailto:goqkfkrlk98@gmail.com" class="footer-link"> E-mail </a>
+
+          <span>© 2026 ALL RIGHTS RESERVED BY JEON YEJIN</span>
+
+          <a href="https://instagram.com/7zxlko" target="_blank" class="footer-link"> Instagram </a>
+        </div>
+      </section>
+      <!-- // contact -->
+    </main>
+
+    <div id="about-modal" class="modal-overlay">
+      <div class="modal-content">
+        <!-- 닫기 버튼 -->
+        <button class="modal-close">
+          <span class="close-icon"></span>
+        </button>
+
+        <div class="modal-body">
+          <div class="modal-header">
+            <h2>전예진</h2>
+            <span class="birth">1998. 10. 27</span>
+          </div>
+
+          <p class="intro">
+            콘텐츠의 다양성을 깊이 경험하며 관찰자의 시선을 생산자의 감각으로 확장해 왔습니다.<br />
+            엔터테인먼트 실무부터 영상, 웹 기술까지 본질을 찾아가는 과정은 저에게 단순한 경력을 넘어, 나 자신을 찾아가는
+            여정이었습니다.
+          </p>
+
+          <div class="info-section">
+            <h3>Experiences</h3>
+            <ul>
+              <li>ANDMARQ 콘텐츠 기획팀 22 - 23</li>
+              <li>용인대 문화콘텐츠학과 24 - 26</li>
+              <li>명지전문대 경영학과 19 - 21</li>
+            </ul>
+          </div>
+
+          <div class="info-section">
+            <h3>Qualifications</h3>
+            <ul>
+              <li>TOEIC Speaking Level AL</li>
+              <li>GTQ Photoshop 1급</li>
+              <li>GTQ Illustrator 2급</li>
+            </ul>
+          </div>
+
+          <div class="info-section">
+            <h3>Courses</h3>
+            <ul>
+              <li>MBC 아카데미 웹 & 영상 25 - 26</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // About 모달 레이어 -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+    <script src="js/about.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+.sub-log,
+.sub-log span,
+.sub-log a {
+  color: #949494 !important;
+  opacity: 1 !important;
+}
+
+.header,
+.sub-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 60px;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+.header-inner,
+.sub-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* logo */
+
+.sub-logo {
+  position: relative;
+
+  left: 42px;
+  top: 0px;
+
+  color: #d1d1d1;
+
+  text-decoration: none;
+
+  font-size: 24px;
+  line-height: 1;
+
+  font-family: "PP Neue Montreal Medium", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* archive logo */
+.sub-log {
+  position: relative;
+
+  left: 42px;
+  top: 0px;
+
+  color: #181818;
+  text-decoration: none;
+
+  font-size: 24px;
+  line-height: 1;
+
+  font-family: "PP Neue Montreal Medium", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* nav */
+
+.nav ul,
+.sub-nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a,
+.sub-nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: "PP Neue Montreal Medium", sans-serif;
+}
+
+/* common O */
+
+.font-trirong {
+  font-family: "DM Serif Text", serif;
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  transform: skewX(-5deg);
+  letter-spacing: 1.5px;
+}

@@ -1,0 +1,1036 @@
+body {
+  background-color: #050a10;
+  color: #d1d1d1;
+  overflow-x: hidden;
+  font-family: "PP Neue Montreal Book", "Pretendard", sans-serif;
+  transition:
+    background-color 0.6s ease,
+    color 0.6s ease;
+}
+
+/* 배경 캔버스 */
+.bg-noise-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.nav ul {
+  display: flex;
+  gap: 40px;
+
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+header .header-inner #logo-target .tov-wrapper .tov-text {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  display: inline-block !important;
+}
+
+/* 메인 타이틀 */
+.tov-wrapper {
+  position: fixed;
+  margin-top: -28px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.tov-text {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 10rem;
+  font-family: "PP Neue Montreal Medium", sans-serif;
+  pointer-events: auto;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.tov-text > span {
+  position: absolute;
+  white-space: nowrap;
+}
+
+.t-the {
+  top: 15%;
+  left: 15%;
+}
+.t-origin {
+  top: 32%;
+  left: 20%;
+}
+.t-value-group {
+  top: 50%;
+  left: 26.5%;
+  display: flex;
+  align-items: center;
+}
+.t-line {
+  height: 3px;
+  background: #d1d1d1;
+  margin-left: 30px;
+  width: 25vw; /* */
+  transform-origin: left center;
+  transform: translateY(50px);
+}
+
+/* 유리 블러 버블 */
+.glass-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+}
+.glass-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    inset 0 10px 20px rgba(255, 255, 255, 0.3),
+    inset 0 -5px 15px rgba(0, 0, 0, 0.2),
+    0 10px 30px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.068);
+
+  background-image: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+
+  pointer-events: none;
+  will-change: transform;
+  z-index: 5;
+}
+
+/* 사이드 링크 */
+.side-link {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  z-index: 100;
+  font-family: "safiro-medium";
+
+  color: #d1d1d1;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: visible;
+  pointer-events: auto;
+  display: inline-block;
+}
+
+.char {
+  display: inline-block;
+  transform-origin: 0% 100%;
+  will-change: transform, opacity;
+}
+.sl-left {
+  left: 60px;
+}
+.sl-right {
+  right: 60px;
+}
+
+.next-section {
+  height: 200vh;
+  padding: 100px;
+  position: relative;
+  z-index: 50;
+}
+
+/* about 모달 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.modal-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: #000;
+  width: 600px;
+  padding: 80px 50px;
+  margin: 20px;
+  border-radius: 40px;
+  position: relative;
+  transform: translate(100px, 100px) rotate(-5deg) scale(0.9);
+  opacity: 0;
+  transition:
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s ease;
+}
+
+.modal-close {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-1400%, -50%) scale(1);
+
+  width: 50px;
+  height: 50px;
+  background: #111;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2100;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.is-active .modal-content {
+  transform: translate(0, 0) rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.modal-close:hover {
+  transform: translate(-1400%, -50%) scale(1.2);
+  background: #222;
+}
+
+.close-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  transition: transform 0.4s ease;
+}
+
+.close-icon::before,
+.close-icon::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+}
+.close-icon::before {
+  width: 100%;
+  height: 2px;
+  top: 9px;
+  left: 0;
+}
+.close-icon::after {
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 9px;
+}
+
+.modal-close:hover .close-icon {
+  transform: rotate(0deg);
+}
+.modal-header {
+  font-family: "Pretendard";
+}
+.modal-header h2 {
+  display: inline-block;
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #fff;
+  margin-right: 15px;
+}
+.modal-header .birth {
+  font-size: 14px;
+  color: #888;
+}
+.intro {
+  font-family: "Pretendard";
+  word-break: keep-all;
+  font-size: 14px;
+  line-height: 2;
+  margin: 30px 0;
+  color: #bbb;
+  margin-bottom: 200px;
+}
+.info-section {
+  margin-bottom: 40px;
+}
+.info-section h3 {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.info-section li {
+  font-family: "Pretendard";
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #ddd;
+}
+
+/* works */
+.tov-text,
+.nav a,
+.side-link {
+  color: #d1d1d1;
+  transition: color 0.6s ease;
+}
+
+.works-section {
+  background: #f0f0f0;
+}
+
+.works-title {
+  font-family: "PP Neue Montreal Medium";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  font-size: 18vw;
+  line-height: 0.9;
+  color: rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 글자 영역 */
+
+.letter-wrap {
+  overflow: hidden;
+  display: inline-block;
+  height: 1em;
+}
+
+.letter-wrap span {
+  display: block;
+  transform: translateY(0%);
+}
+
+.project-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.track {
+  position: relative;
+  width: 5000px;
+  height: 100vh;
+}
+
+.card {
+  width: 320px;
+  height: 460px;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  will-change: transform;
+  transition: transform 0.2s linear;
+}
+
+/* 이미지 */
+.card-img {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition:
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.8s ease;
+  will-change: transform;
+}
+
+.card:hover .card-img img {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+/* 텍스트 */
+.card-desc {
+  padding: 10px 5px;
+}
+.card-desc h4 {
+  font-family: "PP Neue Montreal regular";
+  font-size: 40px;
+  line-height: 1;
+  color: white;
+}
+.card-meta {
+  margin-top: 24px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.category {
+  color: #888;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+.sub-text {
+  font-size: 15px;
+  color: #aaa;
+  margin-top: 12px;
+  margin-bottom: 60px;
+}
+
+/* Archive */
+/* moving gradient */
+
+.archive-bg {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(80, 90, 120, 0.45), transparent 35%),
+    radial-gradient(circle at 80% 60%, rgba(70, 80, 110, 0.35), transparent 40%);
+
+  filter: blur(90px);
+
+  animation: archiveGradient 12s ease-in-out infinite alternate;
+}
+
+@keyframes archiveGradient {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-5%, 5%) scale(1.15);
+  }
+}
+
+.archive-section {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #d9dde3;
+
+  z-index: 30;
+}
+
+/* wrapper */
+.archive-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  gap: 60px;
+
+  opacity: 0;
+
+  transform: translateY(120px);
+
+  will-change: transform, opacity;
+}
+
+.archive-webgl {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: 0.9;
+}
+
+/* columns */
+
+.archive-column {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  /* gap: 40px; */
+
+  will-change: transform;
+}
+
+/* diagonal */
+
+.archive-left {
+  margin-top: 220px;
+}
+
+.archive-right {
+  margin-top: -120px;
+}
+
+/* pair */
+
+.archive-pair {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  will-change: transform, opacity, filter;
+
+  transform-origin: center center;
+}
+
+/* circles */
+
+.archive-circle {
+  position: relative;
+
+  width: 18rem;
+  height: 18rem;
+
+  position: relative;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+
+  box-shadow: 0px 0px 20px #00000044;
+}
+
+/* image */
+
+.image-circle {
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+.image-circle img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 1.2s ease;
+}
+
+.archive-pair:hover img {
+  transform: scale(1.08);
+}
+
+/* text circle */
+
+.text-circle {
+  border: 1px solid rgba(102, 102, 102, 0.7);
+
+  backdrop-filter: blur(20px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: #111;
+
+  z-index: 2;
+
+  overflow: visible;
+}
+
+/* text */
+.inner-text {
+  width: 90%;
+  height: 90%;
+  background-color: #d4d4d479;
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.circle-number {
+  font-family: "safiro-medium";
+  font-size: 14px;
+}
+
+.text-circle h3 {
+  font-family: "safiro-medium";
+  font-size: 30px;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.text-circle p {
+  font-family: "safiro-medium";
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* orbit dots */
+
+.orbit-ring {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  will-change: transform;
+}
+.orbit-dot,
+.orbit-dot-2 {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: #000;
+}
+
+/* 첫번째 점 */
+.orbit-dot {
+  top: 50%;
+  right: 0;
+}
+
+/* 두번째 점 */
+.orbit-dot-2 {
+  top: 50%;
+  left: 0;
+}
+
+/* =========================
+ARCHIVE UI FRAME
+========================= */
+
+.archive-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* LEFT */
+
+.archive-side-left {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+
+  transform: translateY(-150%);
+}
+
+.archive-side-left h2 {
+  font-size: 40px;
+
+  font-family: "safiro-medium";
+
+  color: #181818;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.04em;
+}
+
+/* RIGHT */
+
+.archive-side-right {
+  position: absolute;
+
+  right: 80px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.archive-side-right span {
+  font-size: 40px;
+
+  font-family: "safiro-medium";
+
+  color: #181818;
+
+  letter-spacing: -0.04em;
+}
+
+/* =========================
+ARCHIVE PROGRESS
+========================= */
+
+.archive-progress {
+  position: absolute;
+  left: 60px;
+  bottom: 60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  backdrop-filter: blur(10px);
+  background: rgba(185, 185, 185, 0.075);
+}
+
+.archive-progress-text {
+  font-family: "safiro-regular";
+  font-size: 50px;
+  color: #111;
+  letter-spacing: -0.04em;
+}
+
+/* =========================
+CONTACT
+========================= */
+
+.contact-section {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: transparent;
+
+  z-index: 50;
+}
+
+/* folder */
+
+.folder-link {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-decoration: none;
+
+  color: #fff;
+
+  cursor: grab;
+
+  user-select: none;
+  touch-action: none;
+
+  z-index: 5;
+}
+
+/* 위치 */
+
+.folder-mail {
+  left: 23%;
+  top: 48%;
+}
+
+.folder-insta {
+  right: 23%;
+  top: 22%;
+}
+
+/* svg */
+
+.folder-svg {
+  color: rgba(255, 255, 255, 0.432);
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.25)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.08));
+}
+
+.folder-link:hover .folder-svg {
+  transform: translateY(-4px);
+
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.18));
+}
+
+.folder-link span {
+  margin-top: 5px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.568);
+}
+
+/* Back to top */
+
+.back-top {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* square */
+
+.back-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition:
+    background 0.4s ease,
+    transform 0.4s ease;
+}
+
+/* arrow */
+
+.back-box .arrow {
+  font-size: 25px;
+  color: #fff;
+
+  transition: color 0.4s ease;
+}
+
+/* text */
+
+.back-text {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* hover */
+
+.back-top:hover .back-box {
+  background: #fff;
+}
+
+.back-top:hover .arrow {
+  color: #000;
+}
+
+.contact-bg-text {
+  position: absolute;
+
+  left: 0;
+  bottom: -20px;
+
+  /* transform: translateX(-50%); */
+
+  font-size: clamp(200px, 18vw, 310px);
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+
+  color: rgba(255, 255, 255, 0.28);
+
+  font-family: "PP Neue Montreal Medium";
+
+  letter-spacing: -0.04em;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+/* footer */
+
+.contact-footer {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 14px;
+  letter-spacing: -0.01em;
+
+  color: rgba(255, 255, 255, 0.486);
+
+  z-index: 100;
+}
+
+.footer-link {
+  position: relative;
+
+  z-index: 101;
+
+  pointer-events: auto;
+
+  color: rgba(255, 255, 255, 0.486);
+
+  text-decoration: none;
+
+  transition: color 0.4s ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+/* 미디어 쿼리 */
+
+@media (max-width: 1300px) {
+  .tov-text {
+    font-size: clamp(5rem, 30vw, 8rem);
+  }
+
+  .t-the {
+    left: 8%;
+  }
+
+  .t-origin {
+    left: 14%;
+  }
+
+  .t-value-group {
+    left: 22%;
+  }
+
+  .t-line {
+    width: 18vw;
+    margin-left: 15px;
+  }
+
+  .contact-bg-text {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    /* transform: translateX(-50%); */
+    font-size: clamp(50px, 15vw, 200px);
+  }
+
+  .modal-close {
+    transform: translate(-1200%, -50%) scale(1);
+  }
+  .modal-close:hover {
+    transform: translate(-1200%, -50%) scale(1.2);
+  }
+}
+
+@media (max-width: 980px) {
+  .archive-side-left {
+    display: none;
+  }
+
+  .archive-side-right {
+    display: none;
+  }
+
+  .archive-progress {
+    display: none;
+  }
+
+  .modal-close {
+    transform: translate(-1000%, -50%) scale(1);
+  }
+  .modal-close:hover {
+    transform: translate(-1000%, -50%) scale(1.2);
+  }
+}
+
+@media (max-width: 860px) {
+  .modal-close {
+    transform: translate(-850%, -50%) scale(1);
+  }
+  .modal-close:hover {
+    transform: translate(-850%, -50%) scale(1.2);
+  }
+}
+
+@media (max-width: 760px) {
+  .modal-close {
+    transform: translate(-760%, -50%) scale(1);
+  }
+  .modal-close:hover {
+    transform: translate(-760%, -50%) scale(1.2);
+  }
+}
+
+@media (max-width: 720px) {
+  .tov-text {
+    font-size: clamp(5rem, 20vw, 8rem);
+  }
+
+  .t-the {
+    left: 8%;
+  }
+
+  .t-origin {
+    left: 17%;
+  }
+
+  .t-value-group {
+    left: 30%;
+  }
+
+  .t-line {
+    width: 18vw;
+    margin-left: 15px;
+  }
+}
