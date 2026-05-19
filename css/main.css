@@ -127,9 +127,10 @@ header .header-inner #logo-target .tov-wrapper .tov-text {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 13px;
+  font-size: 12px;
   z-index: 100;
   font-family: "safiro-medium";
+  text-transform: uppercase;
 
   color: #d1d1d1;
   text-decoration: none;
@@ -871,26 +872,18 @@ CONTACT
 
 .contact-bg-text {
   position: absolute;
-
   left: 0;
   bottom: -20px;
 
   /* transform: translateX(-50%); */
 
   font-size: clamp(200px, 18vw, 310px);
-
   line-height: 1.2;
-
   white-space: nowrap;
-
   color: rgba(255, 255, 255, 0.28);
-
   font-family: "PP Neue Montreal Medium";
-
   letter-spacing: -0.04em;
-
   pointer-events: none;
-
   z-index: 2;
 }
 
@@ -917,15 +910,10 @@ CONTACT
 
 .footer-link {
   position: relative;
-
   z-index: 101;
-
   pointer-events: auto;
-
   color: rgba(255, 255, 255, 0.486);
-
   text-decoration: none;
-
   transition: color 0.4s ease;
 }
 

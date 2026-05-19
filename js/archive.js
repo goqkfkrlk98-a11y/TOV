@@ -58,12 +58,11 @@ gsap.from(".showcase-info", {
   delay: 0.2,
   opacity: 0,
 });
-
 // =========================
 // IMAGE MODAL
 // =========================
 
-const modalBtns = document.querySelectorAll(".showcase-btn");
+const modalBtns = document.querySelectorAll("[data-modal]");
 
 const imageModal = document.querySelector(".image-modal");
 
@@ -99,7 +98,6 @@ imageModal.addEventListener("click", (e) => {
     document.body.style.overflow = "";
   }
 });
-
 // =========================
 // RETURN TO PREVIOUS ARCHIVE POSITION
 // =========================

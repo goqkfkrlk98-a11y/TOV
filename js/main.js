@@ -544,7 +544,10 @@ ScrollTrigger.create({
 
       let x = card.baseX - progress * 3000 + Math.sin(progress * 4 + i) * 40;
 
-      const y = i % 2 === 0 ? 120 + Math.cos(progress * 14 + i) * 45 : 320 + Math.sin(progress * 14 + i) * 45;
+      const y =
+        i % 2 === 0
+          ? 120 + Math.cos(progress * 14 + i) * 45
+          : 320 + Math.sin(progress * 14 + i) * 45;
       // 회전
       const rotate = Math.sin(progress * 10 + i) * 10;
 
@@ -552,7 +555,10 @@ ScrollTrigger.create({
         // 기본 움직임
         let x = card.baseX - progress * 3000 + Math.sin(progress * 4 + i) * 40;
 
-        const y = i % 2 === 0 ? 120 + Math.cos(progress * 14 + i) * 45 : 320 + Math.sin(progress * 14 + i) * 45;
+        const y =
+          i % 2 === 0
+            ? 120 + Math.cos(progress * 14 + i) * 45
+            : 320 + Math.sin(progress * 14 + i) * 45;
 
         // 기본 회전
         let rotate = Math.sin(progress * 10 + i) * 10;

@@ -49,6 +49,10 @@ LEFT
   transform: translateY(-50%);
 
   z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* title */
@@ -80,6 +84,12 @@ LEFT
 
 /* button */
 
+.showcase-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .showcase-btn {
   margin-top: 42px;
 
@@ -105,6 +115,35 @@ LEFT
 
 .showcase-btn:hover {
   background: rgba(255, 255, 255, 0.5);
+}
+
+/* side nav */
+
+.side-nav {
+  position: fixed;
+  top: 52%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #888;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  z-index: 50;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.side-nav:hover {
+  color: #fff;
+}
+
+.arrow {
+  font-size: 14px;
+}
+
+/* 왼쪽 */
+.side-left {
+  left: 30px;
 }
 
 /* =========================
@@ -517,6 +556,13 @@ IMAGE MODAL
 
 .modal-close2:hover .close-icon2 {
   transform: rotate(0deg);
+}
+
+.archive-footer {
+  color: #5e5e5e86;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 /* =========================

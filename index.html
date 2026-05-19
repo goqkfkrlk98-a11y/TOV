@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TOV</title>
+    <title>Portfolio</title>
     <meta name="title" content="Portfolio | The Origin Value" />
     <meta name="subject" content="Portfolio" />
+    <link rel="shortcut icon" href="img/icon/favicon.ico" />
 
     <link rel="stylesheet" href="css/common/font.css" />
     <link rel="stylesheet" href="css/common/reset.css" />
@@ -48,8 +49,8 @@
     <main>
       <section class="hero">
         <div class="glass-container" id="bubble-container"></div>
-        <a href="#about" class="side-link sl-left" data-text="About">About</a>
-        <a href="#contact" class="side-link sl-right" data-text="Contact">Contact</a>
+        <a href="#about" class="side-link sl-left" data-text="About">(About)</a>
+        <a href="#contact" class="side-link sl-right" data-text="Contact">(Contact)</a>
       </section>
       <!-- // hero -->
 
@@ -681,8 +682,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
 
     <script src="js/about.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      // Initialize Lenis
+      const lenis = new Lenis({
+        autoRaf: true,
+      });
+
+      // Listen for the scroll event and log the event data
+      lenis.on("scroll", (e) => {
+        console.log(e);
+      });
+    </script>
   </body>
 </html>
