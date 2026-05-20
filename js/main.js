@@ -23,18 +23,24 @@ const material = new THREE.ShaderMaterial({
   fragmentShader: `
     varying vec2 vUv;
 
+
     uniform float uTime;
     uniform vec2 uMouse;
+
 
     uniform vec3 uColor1;
     uniform vec3 uColor2;
     uniform vec3 uColor3;
 
 
+
+
     vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
     vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
     vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }
     vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
+
+
 
 
     float snoise(vec3 v) {
@@ -81,11 +87,15 @@ const material = new THREE.ShaderMaterial({
     }
 
 
+
+
     void main() {
       vec2 p = vUv;
       float n = snoise(vec3(p * 1.5, uTime * 0.2));
       n += 0.5 * snoise(vec3(p * 2.5, uTime * 0.3));
       n += 0.25 * snoise(vec3(p * 4.0, uTime * 0.5));
+
+
 
 
       float intensity = n * 0.5 + 0.5;
@@ -515,17 +525,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 const cards = gsap.utils.toArray(".card");
 
-// 초기 위치 저장
+const isMobile = window.innerWidth < 980;
+
+// 초기 세팅
 cards.forEach((card, i) => {
   card.baseX = window.innerWidth + i * 420;
-  card.baseY = gsap.utils.random(50, 180);
 
   gsap.set(card, {
     x: card.baseX,
-    y: card.baseY,
+    y: i % 2 === 0 ? 120 : 320,
     rotate: gsap.utils.random(-10, 10),
     scale: gsap.utils.random(0.85, 1.15),
     zIndex: Math.floor(gsap.utils.random(1, 20)),
+    force3D: true,
   });
 });
 
@@ -534,36 +546,38 @@ ScrollTrigger.create({
   start: "top top",
   end: "+=3000",
   scrub: 1,
-  ease: "power1.inOut",
 
   onUpdate: (self) => {
     const progress = self.progress;
 
     cards.forEach((card, i) => {
-      const laneGap = 340;
+      let x = card.baseX - progress * 3000;
 
-      let x = card.baseX - progress * 3000 + Math.sin(progress * 4 + i) * 40;
+      let y;
+      let rotate;
 
-      const y =
-        i % 2 === 0
-          ? 120 + Math.cos(progress * 14 + i) * 45
-          : 320 + Math.sin(progress * 14 + i) * 45;
-      // 회전
-      const rotate = Math.sin(progress * 10 + i) * 10;
+      // =========================
+      // MOBILE
+      // =========================
+      if (isMobile) {
+        x += Math.sin(progress * 2 + i) * 8;
 
-      cards.forEach((card, i) => {
-        // 기본 움직임
-        let x = card.baseX - progress * 3000 + Math.sin(progress * 4 + i) * 40;
+        y = i % 2 === 0 ? 140 : 260;
 
-        const y =
-          i % 2 === 0
-            ? 120 + Math.cos(progress * 14 + i) * 45
-            : 320 + Math.sin(progress * 14 + i) * 45;
+        rotate = 0;
+      }
 
-        // 기본 회전
-        let rotate = Math.sin(progress * 10 + i) * 10;
+      // =========================
+      // PC
+      // =========================
+      else {
+        x += Math.sin(progress * 4 + i) * 40;
 
-        // ===== 충돌 계산 =====
+        y = i % 2 === 0 ? 120 + Math.cos(progress * 14 + i) * 45 : 320 + Math.sin(progress * 14 + i) * 45;
+
+        rotate = Math.sin(progress * 10 + i) * 10;
+
+        // 충돌 효과 (PC만)
         cards.forEach((otherCard, j) => {
           if (i === j) return;
 
@@ -571,7 +585,6 @@ ScrollTrigger.create({
 
           const distance = Math.abs(x - otherX);
 
-          // 가까워지면 밀어냄
           if (distance < 320) {
             const push = (260 - distance) * 0.6;
 
@@ -584,17 +597,16 @@ ScrollTrigger.create({
             }
           }
         });
+      }
 
-        gsap.set(card, {
-          x,
-          y,
-          rotate,
-        });
+      gsap.set(card, {
+        x,
+        y,
+        rotate,
       });
     });
   },
 });
-
 // =========================
 // ARCHIVE SECTION
 // =========================
@@ -817,8 +829,10 @@ const archiveMaterial = new THREE.ShaderMaterial({
   vertexShader: `
     varying vec2 vUv;
 
+
     void main() {
       vUv = uv;
+
 
       gl_Position = vec4(position, 1.0);
     }
@@ -827,48 +841,62 @@ const archiveMaterial = new THREE.ShaderMaterial({
   fragmentShader: `
     varying vec2 vUv;
 
+
     uniform float uTime;
     uniform vec2 uMouse;
+
 
     uniform vec3 uColor1;
     uniform vec3 uColor2;
     uniform vec3 uColor3;
 
+
     vec3 mod289(vec3 x) {
       return x - floor(x * (1.0 / 289.0)) * 289.0;
     }
+
 
     vec4 mod289(vec4 x) {
       return x - floor(x * (1.0 / 289.0)) * 289.0;
     }
 
+
     vec4 permute(vec4 x) {
       return mod289(((x*34.0)+1.0)*x);
     }
+
 
     vec4 taylorInvSqrt(vec4 r) {
       return 1.79284291400159 - 0.85373472095314 * r;
     }
 
+
     float snoise(vec3 v) {
+
 
       const vec2 C = vec2(1.0/6.0, 1.0/3.0);
       const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
 
+
       vec3 i = floor(v + dot(v, C.yyy));
       vec3 x0 = v - i + dot(i, C.xxx);
+
 
       vec3 g = step(x0.yzx, x0.xyz);
       vec3 l = 1.0 - g;
 
+
       vec3 i1 = min(g.xyz, l.zxy);
       vec3 i2 = max(g.xyz, l.zxy);
+
 
       vec3 x1 = x0 - i1 + C.xxx;
       vec3 x2 = x0 - i2 + C.yyy;
       vec3 x3 = x0 - D.yyy;
 
+
       i = mod289(i);
+
 
       vec4 p = permute(
         permute(
@@ -880,35 +908,47 @@ const archiveMaterial = new THREE.ShaderMaterial({
         + i.x + vec4(0.0, i1.x, i2.x, 1.0)
       );
 
+
       float n_ = 0.142857142857;
+
 
       vec3 ns = n_ * D.wyz - D.xzx;
 
+
       vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
+
 
       vec4 x_ = floor(j * ns.z);
       vec4 y_ = floor(j - 7.0 * x_);
 
+
       vec4 x = x_ * ns.x + ns.yyyy;
       vec4 y = y_ * ns.x + ns.yyyy;
 
+
       vec4 h = 1.0 - abs(x) - abs(y);
+
 
       vec4 b0 = vec4(x.xy, y.xy);
       vec4 b1 = vec4(x.zw, y.zw);
 
+
       vec4 s0 = floor(b0) * 2.0 + 1.0;
       vec4 s1 = floor(b1) * 2.0 + 1.0;
 
+
       vec4 sh = -step(h, vec4(0.0));
+
 
       vec4 a0 = b0.xzyw + s0.xzyw * sh.xxyy;
       vec4 a1 = b1.xzyw + s1.xzyw * sh.zzww;
+
 
       vec3 p0 = vec3(a0.xy, h.x);
       vec3 p1 = vec3(a0.zw, h.y);
       vec3 p2 = vec3(a1.xy, h.z);
       vec3 p3 = vec3(a1.zw, h.w);
+
 
       vec4 norm = taylorInvSqrt(
         vec4(
@@ -919,10 +959,12 @@ const archiveMaterial = new THREE.ShaderMaterial({
         )
       );
 
+
       p0 *= norm.x;
       p1 *= norm.y;
       p2 *= norm.z;
       p3 *= norm.w;
+
 
       vec4 m = max(
         0.6 - vec4(
@@ -934,7 +976,9 @@ const archiveMaterial = new THREE.ShaderMaterial({
         0.0
       );
 
+
       m = m * m;
+
 
       return 42.0 * dot(
         m * m,
@@ -947,35 +991,48 @@ const archiveMaterial = new THREE.ShaderMaterial({
       );
     }
 
+
     void main() {
 
+
       vec2 p = vUv;
+
 
       // mouse distortion
       vec2 mouse = uMouse;
 
+
       float dist = distance(p, mouse);
 
+
       p += (mouse - 0.5) * 0.12 * smoothstep(0.7, 0.0, dist);
+
 
       // flow  ----> 모양 바꾸기 -- moon
       p.x += sin(p.y * 2.5 + uTime * 0.15) * 0.16;
 
+
       p.y += cos(p.x * 2.0 + uTime * 0.08) * 0.06;
+
 
       // noise
       float n =
         snoise(vec3(p * 0.9, uTime * 0.08));
 
+
       n +=
         0.5 * snoise(vec3(p * 2.0, uTime * 0.12));
+
 
       n +=
         0.25 * snoise(vec3(p * 4.0, uTime * 0.05));
 
-        
+
+       
+
 
       float intensity = n * 0.5 + 0.5;
+
 
       vec3 base = mix(
         uColor1,
@@ -983,13 +1040,16 @@ const archiveMaterial = new THREE.ShaderMaterial({
         intensity
       );
 
+
       vec3 finalColor = mix(
         base,
         uColor3,
         smoothstep(0.2, 0.9, intensity)
       );
 
+
       finalColor *= 1.15;
+
 
       // grain
       float grain =
@@ -997,6 +1057,7 @@ const archiveMaterial = new THREE.ShaderMaterial({
           sin(dot(p, vec2(91.9898, 12.233)))
           * 43758.5453
         ) * 0.02;
+
 
       gl_FragColor = vec4(
         finalColor + grain,

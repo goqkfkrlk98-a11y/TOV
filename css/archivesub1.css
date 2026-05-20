@@ -3,48 +3,26 @@
 
   width: 100%;
   min-height: 100vh;
-  /* height: 100vh; */
-
   overflow: hidden;
   overflow-y: auto;
   overflow-x: hidden;
 
-  background: #ece5e1;
+  background: #eeb99b;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   padding-top: 106px;
 
   scrollbar-width: none;
   -ms-overflow-style: none;
 
   background:
-    radial-gradient(circle at 70% 50%, rgba(255, 220, 180, 0.45), transparent 35%),
+    radial-gradient(circle at 70% 50%, rgba(247, 202, 151, 0.45), transparent 35%),
     radial-gradient(circle at 50% 90%, rgba(255, 200, 150, 0.25), transparent 40%);
 }
 
 .archive-showcase::-webkit-scrollbar {
   display: none;
 }
-
-/* =========================
-GRADIENT
-========================= */
-/* 
-.showcase-gradient {
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(circle at 70% 50%, rgba(255, 220, 180, 0.45), transparent 35%),
-    radial-gradient(circle at 50% 90%, rgba(255, 200, 150, 0.25), transparent 40%);
-
-  filter: blur(100px);
-
-  animation: showcaseGradient 8s ease-in-out infinite alternate;
-
-  pointer-events: none;
-} */
 
 @keyframes showcaseGradient {
   0% {

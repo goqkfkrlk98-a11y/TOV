@@ -952,13 +952,6 @@ CONTACT
     /* transform: translateX(-50%); */
     font-size: clamp(50px, 15vw, 200px);
   }
-
-  .modal-close {
-    transform: translate(-1200%, -50%) scale(1);
-  }
-  .modal-close:hover {
-    transform: translate(-1200%, -50%) scale(1.2);
-  }
 }
 
 @media (max-width: 980px) {
@@ -973,31 +966,12 @@ CONTACT
   .archive-progress {
     display: none;
   }
-
-  .modal-close {
-    transform: translate(-1000%, -50%) scale(1);
-  }
-  .modal-close:hover {
-    transform: translate(-1000%, -50%) scale(1.2);
-  }
 }
 
 @media (max-width: 860px) {
-  .modal-close {
-    transform: translate(-850%, -50%) scale(1);
-  }
-  .modal-close:hover {
-    transform: translate(-850%, -50%) scale(1.2);
-  }
 }
 
 @media (max-width: 760px) {
-  .modal-close {
-    transform: translate(-760%, -50%) scale(1);
-  }
-  .modal-close:hover {
-    transform: translate(-760%, -50%) scale(1.2);
-  }
 }
 
 @media (max-width: 720px) {
