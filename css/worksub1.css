@@ -81,7 +81,7 @@ body {
 .work-content {
   display: flex;
   justify-content: space-between;
-  gap: 60px;
+  gap: 4.5%;
 }
 .work-thumb img {
   width: 90%;
@@ -370,4 +370,27 @@ DOC IMAGE MODAL
 
 .doc-close:hover .close-icon {
   transform: rotate(0deg);
+}
+
+@media (max-width: 980px) {
+  .work-page {
+    width: 80%;
+  }
+  .work-content {
+    flex-direction: column;
+  }
+  .work-info {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .work-thumb img {
+    width: 100%;
+  }
+  .work-info {
+    gap: 40px;
+  }
+
+  .modal-close {
+    left: 150%;
+  }
 }

@@ -53,3 +53,11 @@ document.querySelectorAll(".nav a").forEach((link) => {
     });
   });
 });
+
+// 모바일 버튼
+const menu = document.querySelector(".menu");
+const mmMenu = document.querySelector(".mobile-nav");
+
+menu.addEventListener("click", function () {
+  mmMenu.classList.add("active");
+});

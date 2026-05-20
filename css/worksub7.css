@@ -429,3 +429,10 @@ body {
 
   transform: translateX(-50%);
 }
+
+@media (max-width: 980px) {
+  /* grid */
+  .post-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
