@@ -3,7 +3,7 @@
 
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -647,5 +647,14 @@ IMAGE MODAL
 @media (max-width: 720px) {
   .image-modal-img {
     max-width: 80vw;
+  }
+}
+
+@media (max-width: 680px) {
+  .showcase-title {
+    font-size: 30px;
+  }
+  .showcase-count {
+    font-size: 30px;
   }
 }

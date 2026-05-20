@@ -533,9 +533,9 @@ cards.forEach((card, i) => {
 
   gsap.set(card, {
     x: card.baseX,
-    y: i % 2 === 0 ? 120 : 320,
-    rotate: gsap.utils.random(-10, 10),
-    scale: gsap.utils.random(0.85, 1.15),
+    y: isMobile ? 200 : i % 2 === 0 ? 120 : 320,
+    rotate: isMobile ? 0 : gsap.utils.random(-10, 10),
+    scale: isMobile ? 1 : gsap.utils.random(0.85, 1.15),
     zIndex: Math.floor(gsap.utils.random(1, 20)),
     force3D: true,
   });
@@ -560,11 +560,21 @@ ScrollTrigger.create({
       // MOBILE
       // =========================
       if (isMobile) {
-        x += Math.sin(progress * 2 + i) * 8;
+        x = card.baseX - progress * 1200;
 
-        y = i % 2 === 0 ? 140 : 260;
+        y = 200;
 
         rotate = 0;
+
+        gsap.set(card, {
+          x: Math.round(x),
+          y,
+          rotate,
+          scale: 1,
+          force3D: true,
+        });
+
+        return;
       }
 
       // =========================
@@ -757,7 +767,9 @@ function updateArchiveFocus() {
   requestAnimationFrame(updateArchiveFocus);
 }
 
-updateArchiveFocus();
+if (!isMobile) {
+  updateArchiveFocus();
+}
 
 // =========================
 // ARCHIVE GRADIENT MOTION
@@ -797,7 +809,7 @@ const archiveRenderer = new THREE.WebGLRenderer({
   alpha: true,
   antialias: true,
 });
-archiveRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+archiveRenderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
 archiveRenderer.setSize(window.innerWidth, window.innerHeight);
 
 const archiveGeometry = new THREE.PlaneGeometry(2, 2);
