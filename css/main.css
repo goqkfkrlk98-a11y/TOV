@@ -87,7 +87,7 @@ header .header-inner #logo-target .tov-wrapper .tov-text {
   height: 3px;
   background: #d1d1d1;
   margin-left: 30px;
-  width: 25vw; /* */
+  width: 25vw;
   transform-origin: left center;
   transform: translateY(50px);
 }
@@ -1044,9 +1044,6 @@ CONTACT
     font-size: 13px;
   }
 
-  .tov-text {
-    font-size: 6rem;
-  }
   .archive-circle {
     width: 12rem;
     height: 12rem;

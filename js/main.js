@@ -211,46 +211,97 @@ gsap.to(".t-line", {
 gsap.set(".char-unit", {
   opacity: 1,
 });
-const tl = gsap.timeline({
-  scrollTrigger: {
-    id: "heroTrigger",
-    trigger: ".hero",
-    start: "top top",
-    end: "+=1400",
-    scrub: 1,
-    pin: true,
-  },
+
+const mm = gsap.matchMedia();
+
+mm.add("(max-width: 480px)", () => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      id: "heroTrigger",
+      trigger: ".hero",
+      start: "top top",
+      end: "+=1400",
+      scrub: 1,
+      pin: true,
+    },
+  });
+
+  tl.to(
+    [
+      ".t-the .char-unit:not(:first-child)",
+      ".t-origin .char-unit:not(:first-child)",
+      ".t-value .char-unit:not(:first-child)",
+    ],
+    {
+      autoAlpha: 0,
+      duration: 0.2,
+      immediateRender: false,
+    },
+  );
+
+  // 모바일 값
+  tl.to("#tov-main", {
+    left: "30px",
+    top: "15px",
+    scale: 0.3,
+    transformOrigin: "left top",
+    color: "#fff",
+  });
+
+  tl.to(
+    ".t-origin, .t-value-group",
+    {
+      top: "15%",
+      duration: 0.3,
+    },
+    "<",
+  );
 });
 
-tl.to(
-  [
-    ".t-the .char-unit:not(:first-child)",
-    ".t-origin .char-unit:not(:first-child)",
-    ".t-value .char-unit:not(:first-child)",
-  ],
-  {
-    autoAlpha: 0,
-    duration: 0.2,
+mm.add("(min-width: 481px)", () => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      id: "heroTrigger",
+      trigger: ".hero",
+      start: "top top",
+      end: "+=1400",
+      scrub: 1,
+      pin: true,
+    },
+  });
 
-    immediateRender: false,
-  },
-);
-tl.to("#tov-main", {
-  left: "60px",
-  top: "40px",
-  scale: 0.15,
-  transformOrigin: "left top",
-  color: "#fff",
+  tl.to(
+    [
+      ".t-the .char-unit:not(:first-child)",
+      ".t-origin .char-unit:not(:first-child)",
+      ".t-value .char-unit:not(:first-child)",
+    ],
+    {
+      autoAlpha: 0,
+      duration: 0.2,
+      immediateRender: false,
+    },
+  );
+
+  // PC 값
+  tl.to("#tov-main", {
+    left: "60px",
+    top: "40px",
+    scale: 0.15,
+    transformOrigin: "left top",
+    color: "#fff",
+  });
+
+  tl.to(
+    ".t-origin, .t-value-group",
+    {
+      top: "15%",
+      duration: 0.3,
+    },
+    "<",
+  );
 });
-
-tl.to(
-  ".t-origin, .t-value-group",
-  {
-    top: "15%",
-    duration: 0.3,
-  },
-  "<",
-);
+//끝
 
 gsap.to(".t-line", {
   scrollTrigger: { trigger: ".hero", start: "top top", scrub: true },
