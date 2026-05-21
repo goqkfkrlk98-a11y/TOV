@@ -1332,6 +1332,34 @@ document.querySelectorAll(".nav a").forEach((link) => {
   });
 });
 
+document.querySelectorAll(".menu a").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const href = link.getAttribute("href");
+
+    let targetY = 0;
+
+    if (href === "#works") {
+      targetY = heroST.end + 1500;
+    }
+
+    if (href === "#archive") {
+      targetY = archiveST.start + 3700;
+    }
+
+    if (href === "#contact") {
+      targetY = archiveST.end + 500;
+    }
+
+    gsap.to(window, {
+      duration: 1.6,
+      scrollTo: targetY,
+      ease: "power3.inOut",
+    });
+  });
+});
+
 //서브페이지 네비 이동
 window.addEventListener("load", () => {
   const params = new URLSearchParams(window.location.search);

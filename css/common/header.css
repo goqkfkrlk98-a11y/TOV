@@ -266,6 +266,7 @@
 }
 
 @media (max-width: 980px) {
+  .nav,
   .sub-nav {
     display: none;
   }
