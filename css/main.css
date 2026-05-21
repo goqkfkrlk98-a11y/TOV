@@ -8,6 +8,59 @@ body {
     color 0.6s ease;
 }
 
+/* Scroll down */
+#scroll_down {
+  width: 71px;
+  height: 39px;
+  position: fixed;
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%);
+  background-image: url(../img/icon/scroll_down_white.png);
+  /* animation: scroll_down 6s infinite ease-in; */
+  z-index: 1900;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#scroll_down.opacity {
+  opacity: 1;
+}
+/* @keyframes scroll_down {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+.scroll_circle {
+  width: 6px;
+  height: 6px;
+  position: relative;
+  top: 8px;
+  left: 8px;
+  background-color: #929292;
+  border-radius: 50%;
+  animation: scroll_circle 2s infinite ease-in;
+}
+@keyframes scroll_circle {
+  0% {
+    top: 8px;
+    opacity: 1;
+  }
+  100% {
+    top: 26px;
+    opacity: 0;
+  }
+}
+
+#scroll_down.hide {
+  opacity: 0;
+}
+
 /* 배경 캔버스 */
 .bg-noise-canvas {
   position: fixed;
@@ -1096,5 +1149,8 @@ CONTACT
   }
   .text-circle h3 {
     font-size: 20px;
+  }
+  .contact-bg-text {
+    bottom: 35px;
   }
 }

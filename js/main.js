@@ -1444,3 +1444,16 @@ window.addEventListener("load", () => {
     scrollTo: targetY,
   });
 });
+
+window.addEventListener("scroll", () => {
+  const scrollBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 700;
+  if (window.scrollY > 100) {
+    document.querySelector("#scroll_down").classList.add("opacity");
+  } else {
+    document.querySelector("#scroll_down").classList.remove("opacity");
+  }
+  if (scrollBottom) {
+    console.log("맨 아래 도착");
+    document.querySelector("#scroll_down").classList.remove("opacity");
+  }
+});
