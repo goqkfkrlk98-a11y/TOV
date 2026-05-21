@@ -1445,27 +1445,36 @@ window.addEventListener("load", () => {
   });
 });
 
-window.addEventListener("scroll", () => {
+//스크롤 다운
+function updateScrollDown() {
   const isMobile = window.innerWidth <= 480;
 
   const scrollBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 700;
 
+  const scrollDown = document.querySelector("#scroll_down");
+
   // 모바일
   if (isMobile) {
-    document.querySelector("#scroll_down").classList.add("opacity");
+    scrollDown.classList.add("opacity");
   }
 
   // PC
   else {
     if (window.scrollY > 100) {
-      document.querySelector("#scroll_down").classList.add("opacity");
+      scrollDown.classList.add("opacity");
     } else {
-      document.querySelector("#scroll_down").classList.remove("opacity");
+      scrollDown.classList.remove("opacity");
     }
   }
 
   // 맨 아래 도달 시 숨김
   if (scrollBottom) {
-    document.querySelector("#scroll_down").classList.remove("opacity");
+    scrollDown.classList.remove("opacity");
   }
-});
+}
+
+// 최초 실행
+updateScrollDown();
+
+// 스크롤 시 실행
+window.addEventListener("scroll", updateScrollDown);
