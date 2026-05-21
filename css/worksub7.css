@@ -436,3 +436,41 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media (max-width: 720px) {
+  .sub-header {
+    padding: 40px 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* grid */
+  .post-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .page-title {
+    font-size: 18px;
+    padding-bottom: 15px;
+  }
+  .work-page {
+    padding: 110px 50px 60px;
+  }
+  .nav-text {
+    display: none;
+  }
+  .side-nav {
+    font-size: 11px;
+    gap: 0;
+  }
+  .arrow {
+    font-size: 24px;
+  }
+
+  .side-left {
+    left: 12px;
+  }
+
+  .side-right {
+    right: 12px;
+  }
+}

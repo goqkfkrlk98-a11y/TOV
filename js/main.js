@@ -454,7 +454,14 @@ function initWorksAndColorScroll() {
       onEnter: () => {
         // 밝은 테마로 전환 (F0F0F0 배경 / 181818 글자)
         gsap.to("body", { backgroundColor: "#F0F0F0", duration: 0.5 });
-        gsap.to([".tov-text", ".nav a", ".side-link"], { color: "#181818", duration: 0.5 });
+        gsap.to([".tov-text", ".nav a", ".side-link", ".menu span a"], {
+          color: "#181818",
+          duration: 0.5,
+        });
+        gsap.to("body", {
+          "--menu-color": "#181818",
+          duration: 0.2,
+        });
         gsap.to(".t-line", { backgroundColor: "#181818", duration: 0.5 });
         gsap.to(".nav ul", {
           opacity: 1,
@@ -466,7 +473,14 @@ function initWorksAndColorScroll() {
       onLeaveBack: () => {
         // 다시 위로 올라갈 때 원래 어두운 테마로 복구
         gsap.to("body", { backgroundColor: "#050a10", duration: 0.5 });
-        gsap.to([".tov-text", ".nav a", ".side-link"], { color: "#d1d1d1", duration: 0.5 });
+        gsap.to([".tov-text", ".nav a", ".side-link", ".menu span a"], {
+          color: "#d1d1d1",
+          duration: 0.5,
+        });
+        gsap.to("body", {
+          "--menu-color": "#d1d1d1",
+          duration: 0.2,
+        });
         gsap.to(".t-line", { backgroundColor: "#d1d1d1", duration: 0.5 });
         gsap.to(".nav ul", {
           opacity: 0,
@@ -486,11 +500,14 @@ function initWorksAndColorScroll() {
     start: "top 70%",
 
     onEnter: () => {
-      gsap.to([".tov-text", ".nav a", ".side-link"], {
+      gsap.to([".tov-text", ".nav a", ".side-link", ".menu span a"], {
         color: "#ffffff",
         duration: 0.5,
       });
-
+      gsap.to("body", {
+        "--menu-color": "#ffffff",
+        duration: 0.2,
+      });
       gsap.to(".t-line", {
         backgroundColor: "#ffffff",
         duration: 0.5,
@@ -498,11 +515,14 @@ function initWorksAndColorScroll() {
     },
 
     onLeaveBack: () => {
-      gsap.to([".tov-text", ".nav a", ".side-link"], {
+      gsap.to([".tov-text", ".nav a", ".side-link", ".menu span a"], {
         color: "#181818",
         duration: 0.5,
       });
-
+      gsap.to("body", {
+        "--menu-color": "#181818",
+        duration: 0.2,
+      });
       gsap.to(".t-line", {
         backgroundColor: "#181818",
         duration: 0.5,

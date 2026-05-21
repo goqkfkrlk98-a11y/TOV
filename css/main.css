@@ -996,8 +996,7 @@ CONTACT
     display: none;
   }
   .nav ul {
-    display: flex;
-    gap: 30px;
+    display: none;
   }
   .archive-circle {
     width: 14rem;

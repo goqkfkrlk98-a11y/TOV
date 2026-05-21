@@ -17,6 +17,17 @@
   </head>
 
   <body>
+    <div class="menu_wrap amenu">
+      <div class="menu">
+        <div class="container">
+          <div class="toggle"></div>
+        </div>
+        <span class="hidden"><a href="#about" class="side-link sl-left" data-text="About">About</a></span
+        ><span class="hidden"><a href="../index.html?move=works">Works</a></span
+        ><span class="hidden"><a href="../index.html?move=archive">Archive</a></span
+        ><span class="hidden"><a href="../index.html?move=contact">Contact</a></span>
+      </div>
+    </div>
     <header class="sub-header">
       <div class="sub-header-inner">
         <a href="../index.html?return=archive" class="sub-log"> T<span class="font-trirong">O</span>V </a>
@@ -36,10 +47,11 @@
     <!-- 사이드 -->
     <a href="archivesub4.html" class="side-nav side-left">
       <span class="arrow">←</span>
-      PREV
+      <span class="nav-text">PREV</span>
     </a>
+
     <a href="archivesub6.html" class="side-nav side-right">
-      NEXT
+      <span class="nav-text">NEXT</span>
       <span class="arrow">→</span>
     </a>
 
@@ -189,6 +201,16 @@
       </div>
     </div>
     <!-- // About 모달 레이어 -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(".toggle").on("click", function () {
+        $(".menu").toggleClass("expanded");
+        $(".menu span").toggleClass("hidden");
+        $(".container").toggleClass("close");
+        $(".toggle").toggleClass("close");
+      });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

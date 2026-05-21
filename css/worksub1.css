@@ -394,3 +394,31 @@ DOC IMAGE MODAL
     left: 150%;
   }
 }
+
+@media (max-width: 480px) {
+  .work-page {
+    width: 100%;
+  }
+  .work-title {
+    font-size: 18px;
+    padding-bottom: 15px;
+  }
+  .nav-text {
+    display: none;
+  }
+  .side-nav {
+    font-size: 11px;
+    gap: 0;
+  }
+  .arrow {
+    font-size: 24px;
+  }
+
+  .side-left {
+    left: 12px;
+  }
+
+  .side-right {
+    right: 12px;
+  }
+}

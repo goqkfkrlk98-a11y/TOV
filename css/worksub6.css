@@ -219,3 +219,53 @@ body {
 .more-exit-btn:hover .plus-icon {
   transform: rotate(90deg);
 }
+
+@media (max-width: 720px) {
+  .sub-header {
+    padding: 40px 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-page {
+    padding: 110px 50px 60px;
+  }
+
+  .thumb-page-title {
+    font-size: 16px;
+    padding-bottom: 15px;
+  }
+
+  .thumb-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .thumb-desc {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .thumb-meta {
+    font-size: 12px;
+  }
+
+  .nav-text {
+    display: none;
+  }
+  .side-nav {
+    font-size: 11px;
+    gap: 0;
+  }
+  .arrow {
+    font-size: 24px;
+  }
+
+  .side-left {
+    left: 12px;
+  }
+
+  .side-right {
+    right: 12px;
+  }
+}
