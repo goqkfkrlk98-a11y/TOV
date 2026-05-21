@@ -1446,14 +1446,26 @@ window.addEventListener("load", () => {
 });
 
 window.addEventListener("scroll", () => {
+  const isMobile = window.innerWidth <= 480;
+
   const scrollBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 700;
-  if (window.scrollY > 100) {
+
+  // 모바일
+  if (isMobile) {
     document.querySelector("#scroll_down").classList.add("opacity");
-  } else {
-    document.querySelector("#scroll_down").classList.remove("opacity");
   }
+
+  // PC
+  else {
+    if (window.scrollY > 100) {
+      document.querySelector("#scroll_down").classList.add("opacity");
+    } else {
+      document.querySelector("#scroll_down").classList.remove("opacity");
+    }
+  }
+
+  // 맨 아래 도달 시 숨김
   if (scrollBottom) {
-    console.log("맨 아래 도착");
     document.querySelector("#scroll_down").classList.remove("opacity");
   }
 });
