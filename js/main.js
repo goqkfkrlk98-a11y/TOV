@@ -242,10 +242,11 @@ mm.add("(max-width: 480px)", () => {
   // 모바일 값
   tl.to("#tov-main", {
     left: "30px",
-    top: "15px",
+    top: "50px",
     scale: 0.3,
     transformOrigin: "left top",
     color: "#fff",
+    height: 150,
   });
 
   tl.to(
