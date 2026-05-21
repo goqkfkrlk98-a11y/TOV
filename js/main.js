@@ -1449,8 +1449,6 @@ window.addEventListener("load", () => {
 function updateScrollDown() {
   const isMobile = window.innerWidth <= 480;
 
-  const scrollBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 700;
-
   const scrollDown = document.querySelector("#scroll_down");
 
   // 모바일
@@ -1460,16 +1458,18 @@ function updateScrollDown() {
 
   // PC
   else {
+    const scrollBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 700;
+
     if (window.scrollY > 100) {
       scrollDown.classList.add("opacity");
     } else {
       scrollDown.classList.remove("opacity");
     }
-  }
 
-  // 맨 아래 도달 시 숨김
-  if (scrollBottom) {
-    scrollDown.classList.remove("opacity");
+    // PC에서만 하단 숨김
+    if (scrollBottom) {
+      scrollDown.classList.remove("opacity");
+    }
   }
 }
 
