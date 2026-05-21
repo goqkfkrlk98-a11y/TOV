@@ -82,6 +82,7 @@ header .header-inner #logo-target .tov-wrapper .tov-text {
   display: flex;
   align-items: center;
 }
+
 .t-line {
   height: 3px;
   background: #d1d1d1;
@@ -1011,19 +1012,18 @@ CONTACT
 @media (max-width: 860px) {
 }
 
-@media (max-width: 760px) {
-}
-
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .t-the {
     left: 8%;
   }
 
   .t-origin {
+    top: 30%;
     left: 17%;
   }
 
   .t-value-group {
+    top: 40%;
     left: 30%;
   }
 
@@ -1031,6 +1031,9 @@ CONTACT
     width: 18vw;
     margin-left: 15px;
   }
+}
+
+@media (max-width: 720px) {
 }
 
 @media (max-width: 680px) {
@@ -1043,7 +1046,7 @@ CONTACT
   }
 
   .tov-text {
-    font-size: 8rem;
+    font-size: 6rem;
   }
   .archive-circle {
     width: 12rem;
@@ -1051,6 +1054,49 @@ CONTACT
   }
   .archive-inner {
     gap: 30px;
+  }
+  .text-circle h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tov-text {
+    font-size: 5.5rem;
+  }
+
+  .tov-wrapper {
+    transform: translateY(10px);
+  }
+
+  .t-the {
+    /* top: 20%; */
+    left: 6%;
+  }
+
+  .t-origin {
+    top: 30%;
+    left: 14%;
+  }
+
+  .t-value-group {
+    top: 45%;
+    left: 26%;
+  }
+
+  .sl-left {
+    left: 20px;
+  }
+  .sl-right {
+    right: 20px;
+  }
+
+  .archive-circle {
+    width: 11rem;
+    height: 11rem;
+  }
+  .archive-inner {
+    gap: 25px;
   }
   .text-circle h3 {
     font-size: 20px;

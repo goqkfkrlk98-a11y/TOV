@@ -143,6 +143,10 @@
   .modal-close:hover {
     transform: translate(-1200%, -50%) scale(1.2);
   }
+  .modal-content {
+    padding: 50px 30px;
+    margin: 15px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -158,4 +162,15 @@
 }
 
 @media (max-width: 780px) {
+  .modal-content {
+    padding: 40px 30px;
+    margin: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 40px 30px;
+    margin: 10px;
+  }
 }

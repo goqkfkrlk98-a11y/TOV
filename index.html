@@ -27,7 +27,6 @@
   </head>
   <body>
     <canvas id="canvas-webgl" class="bg-noise-canvas"></canvas>
-
     <header class="header">
       <div class="header-inner">
         <div id="logo-target" class="logo-area">
@@ -686,6 +685,16 @@
       </div>
     </div>
     <!-- // About 모달 레이어 -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(".toggle").on("click", function () {
+        $(".menu").toggleClass("expanded");
+        $(".menu span").toggleClass("hidden");
+        $(".container").toggleClass("close");
+        $(".toggle").toggleClass("close");
+      });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
