@@ -18,6 +18,45 @@ window.addEventListener("scroll", () => {
   progressText.textContent = `${progress}%`;
 });
 
+// showcase
+const t1 = gsap.timeline();
+
+t1.from(".showcase-card", {
+  y: 100,
+  opacity: 0.2,
+
+  duration: 0.8,
+
+  stagger: 0.2,
+
+  ease: "power3.out",
+});
+
+const text = new SplitText(".showcase-title", {
+  types: "chars",
+});
+
+gsap.from(text.chars, {
+  y: 100,
+  opacity: 0,
+  stagger: 0.06,
+  duration: 1,
+  ease: "power4.out",
+});
+
+gsap.from(".showcase-count", {
+  y: 50,
+  duration: 0.6,
+  opacity: 0,
+});
+
+gsap.from(".showcase-info", {
+  y: 50,
+  duration: 0.6,
+  delay: 0.2,
+  opacity: 0,
+});
+
 // =========================
 // IMAGE MODAL
 // =========================
